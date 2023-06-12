@@ -20,7 +20,7 @@ IS_SHARED_SPACE = "musicgen/MusicGen" in os.environ.get('SPACE_ID', '')
 
 def load_model(version):
     print("Loading model", version)
-    return MusicGen.get_pretrained(version)
+    return MusicGen.get_pretrained(version, device='cpu')
 
 
 def predict(model, text, melody, duration, topk, topp, temperature, cfg_coef):
